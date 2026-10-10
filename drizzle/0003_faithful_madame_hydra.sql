@@ -1,0 +1,1 @@
+ALTER TABLE `students` MODIFY COLUMN `parentPhone` varchar(32) NOT NULL DEFAULT '';

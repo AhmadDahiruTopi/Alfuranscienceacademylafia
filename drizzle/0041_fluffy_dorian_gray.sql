@@ -1,0 +1,1 @@
+ALTER TABLE `schoolSettings` ADD `dashboardGreeting` varchar(120) DEFAULT 'GOOD DAY' NOT NULL;

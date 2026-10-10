@@ -1,0 +1,1 @@
+ALTER TABLE `schoolSettings` ADD `idCardConfig` text;

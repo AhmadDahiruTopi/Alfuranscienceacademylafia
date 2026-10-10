@@ -1,0 +1,1 @@
+ALTER TABLE `resultTemplateLayouts` ADD `editorConfig` text;

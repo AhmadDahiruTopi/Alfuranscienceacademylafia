@@ -1,0 +1,43 @@
+{
+  "id": "/?pwa=alfurqan",
+  "name": "Al-furqan Science Academy Lafia — School Portal",
+  "short_name": "Al-furqan Portal",
+  "description": "The official school management and learning portal for Al-furqan Science Academy Lafia.",
+  "lang": "en-NG",
+  "dir": "ltr",
+  "start_url": "/?pwa=alfurqan",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f7f7fc",
+  "theme_color": "#232a67",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "/manus-storage/alfurqan-icon-192_426176e9.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/manus-storage/alfurqan-icon-512_2331fdbc.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "url": "/?pwa=dashboard",
+      "icons": [{ "src": "/manus-storage/alfurqan-icon-192_426176e9.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Student directory",
+      "short_name": "Students",
+      "url": "/?pwa=students",
+      "icons": [{ "src": "/manus-storage/alfurqan-icon-192_426176e9.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

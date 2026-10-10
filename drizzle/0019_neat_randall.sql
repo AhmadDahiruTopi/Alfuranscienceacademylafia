@@ -1,0 +1,1 @@
+ALTER TABLE `classSubjects` ADD `arabicName` varchar(160);

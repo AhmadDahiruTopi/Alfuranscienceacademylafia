@@ -1,0 +1,1 @@
+ALTER TABLE `jambExams` ADD `academicSession` varchar(32);

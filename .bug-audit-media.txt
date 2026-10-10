@@ -1,0 +1,13 @@
+Media audit 2026-08-24
+
+Live database query returned two current JAMB recording rows for attempt 90001 / student 240162: a video recording with storageKey jamb-recordings/240162/90001-video-1787554785626_5aa53280.webm, storageUrl /manus-storage/jamb-recordings/240162/90001-video-1787554785626_5aa53280.webm, MIME video/webm, size 65648 bytes; and an audio recording with storageKey jamb-recordings/240162/90001-audio-1787554785619_27a2db0f.webm, storageUrl /manus-storage/jamb-recordings/240162/90001-audio-1787554785619_27a2db0f.webm, MIME audio/webm, size 3891 bytes. Both rows were created at 2026-08-24 06:59:45.
+
+A HEAD request to each local /manus-storage URL returned HTTP 307 Temporary Redirect with Cache-Control: no-store and a signed CloudFront Location URL, confirming the database references resolve through the storage proxy rather than being null or missing. Playback still needs browser verification because media elements may not handle the signed redirect, WebM codec/container compatibility, or the current modal stacking context reliably.
+
+The uploaded screenshots were not reopened; findings come from source inspection, SQL, and HTTP probing.
+
+Repair outcome:
+- Existing database rows and signed storage objects are reachable with correct video/webm and audio/webm headers, but their downloaded bytes do not begin with a valid WebM EBML header; these historical captures cannot be reconstructed safely and now show an explicit browser playback error instead of a blank player.
+- New captures now flush the MediaRecorder stop event before upload, preserve the recorder MIME type, and prevent duplicate cleanup uploads.
+- Administrator playback now requests a fresh signed URL per selected recording through an admin-only tRPC procedure, supplies a MIME-aware <source>, and uses a viewport-level modal above dashboard navigation.
+- Notification center now filters All, Unread, and Read; the public landing navigation always exposes Install app with browser-menu guidance when no prompt is available.

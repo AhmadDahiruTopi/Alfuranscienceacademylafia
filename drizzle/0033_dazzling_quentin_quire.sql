@@ -1,0 +1,22 @@
+CREATE TABLE `resultTemplateLayouts` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`section` enum('Nursery','Primary','Junior','Senior') NOT NULL,
+	`pageOrientation` enum('portrait','landscape') NOT NULL DEFAULT 'portrait',
+	`marginTop` int NOT NULL DEFAULT 16,
+	`marginRight` int NOT NULL DEFAULT 14,
+	`marginBottom` int NOT NULL DEFAULT 14,
+	`marginLeft` int NOT NULL DEFAULT 14,
+	`titleFontSize` int NOT NULL DEFAULT 20,
+	`bodyFontSize` int NOT NULL DEFAULT 11,
+	`arabicTitleSize` int NOT NULL DEFAULT 22,
+	`logoSize` int NOT NULL DEFAULT 64,
+	`headerSpacing` int NOT NULL DEFAULT 12,
+	`rowHeight` int NOT NULL DEFAULT 32,
+	`commentBoxSize` int NOT NULL DEFAULT 104,
+	`tableGap` int NOT NULL DEFAULT 8,
+	`updatedBy` int,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `resultTemplateLayouts_id` PRIMARY KEY(`id`),
+	CONSTRAINT `resultTemplateLayouts_section_unique` UNIQUE(`section`)
+);
